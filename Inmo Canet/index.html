@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+
+<body>
+
+	<header>
+		<img src="./img/logo.png" alt="Logo InmoCanet Inmobliaria">
+		<div id="idiomas">
+			<span>
+				<a href="index.html?lang=es"><img src="./img/bandera_esp.png" alt="Español"></a>
+				<a href="index.html?lang=en"><img src="./img/bandera_ing.png" alt="English"></a>
+			</span>
+			<span>
+				<a href="index.html?lang=fr"><img src="./img/bandera_fra.png" alt="Français"></a>
+				<a href="index.html?lang=de"><img src="./img/bandera_ale.png" alt="Deutsche"></a>
+			</span>
+		</div>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="venta.html">Venta</a></li>
+			<li><a href="alquiler.html">Alquiler</a></li>
+			<li><a href="contacto.html">Contacto</a></li>
+		</ul>
+		<form id="buscador" method="get">
+			<input type="search" name="buscar" id="buscar">
+			<input type="submit" value="Buscar">
+		</form>
+	</nav>
+	<main>
+		<div>
+			<article>
+				<h1>Parcela Urbana en Miramar</h1>
+				<span>
+					<p>Ref: P333555A</p>
+					<p id="info"><a href="#">+Info:</a></p>
+				</span>
+				<img src="./img/Parcela1.jpg" alt="Parcela con viviendas cerca">
+				<section id="rrss">
+					<a href="#"><img src="./img/facebook.png" alt="Logo Facebook"></a>
+					<a href="#"><img src="./img/twitter.png" alt="Logo Twitter"></a>
+					<a href="#"><img src="./img/instagram.png" alt="Logo Instagram"></a>
+				</section>
+			</article>
+			<form action="procesa.php" id="contacto" name="contacto">
+				<p>Envía email a <a href="mailto:info@inmcan.eu">info@inmcan.eu</a></p>
+				<p>O rellena este Formulario:</p>
+				<label for="nombre">Nombre:</label>
+				<input type="text" name="nombre" id="nombre" max="75" autofocus>
+				<label for="email">E-mail:</label>
+				<input type="email" name="email" id="email" max="75" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+				<label for="mensaje">Mensaje:</label>
+				<textarea name="mensaje" id="mensaje" placeholder="En el manaje cita la referencia del inmueble"
+					maxlength="300"></textarea>
+				<span>
+					<input type="checkbox" name="privacidad" id="privacidad" checked>
+					<label for="privacidad">Si, accepto la política de privacidad</label>
+				</span>
+				<input type="submit" value="Enviar">
+			</form>
+		</div>
+	</main>
+
+</body>
+
+</html>

@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: "Youre Gone";
+	src: url("fonts/youre_gone.ttf");
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 13px;
+	font-family: "Arial", sans-serif;
+}
+
+body {
+	min-height: 100%;
+	min-width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"hd"
+		"nv"
+		"mn";
+}
+
+/* Comun a header, nav y main */
+
+header,
+nav,
+main {
+	padding: 0.5rem 8rem;
+}
+
+/* HEADER */
+
+header {
+	display: grid;
+	grid-area: hd;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "lg id";
+	height: 8rem;
+}
+
+header > img {
+	grid-area: lg;
+	height: 7rem;
+	margin-right: auto;
+}
+
+header div#idiomas {
+	grid-area: id;
+	display: table;
+	margin-left: auto;
+}
+
+header div#idiomas span:first-child {
+	display: table-row;
+}
+
+header div#idiomas span:last-child {
+	display: table-row;
+}
+
+/* Barra de navegacion */
+
+header #idiomas img {
+	margin: 0.5rem;
+}
+
+nav {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "ls bs";
+	grid-area: nv;
+	width: 100%;
+	background-color: black;
+	font-size: 2rem;
+	font-family: "Youre Gone";
+}
+
+nav ul {
+	grid-area: ls;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline;
+}
+
+nav ul li a {
+	color: white;
+	padding: 0.5rem;
+}
+
+nav ul li a:hover {
+	background-color: aliceblue;
+	color: black;
+}
+
+nav form#buscador {
+	grid-area: bs;
+	display: inline;
+	margin-left: auto;
+}
+
+nav form#buscador input[type="submit"] {
+	padding: 0 1rem;
+}
+
+/* Cuerpo principal */
+
+main {
+	display: grid;
+	grid-template-areas: 1fr 1fr;
+	grid-template-columns: "fc cn";
+	background-color: grey;
+}
+
+main div {
+	display: flex;
+}
+
+main article {
+	grid-area: fc;
+	width: 60%;
+	background-color: darkslategrey;
+	color: white;
+}
+
+main article h1 {
+	font-size: 2rem;
+	letter-spacing: calc(1rem / 5);
+}
+
+main article span {
+	display: table;
+	width: 100%;
+}
+
+main article span p {
+	display: table-cell;
+	text-align: center;
+	width: 50%;
+	margin-right: -2.5px;
+	font-size: 1.5rem;
+}
+
+main article span p#info {
+	background-color: red;
+}
+
+main article p#info a,
+main article p#info a:hover,
+main article p#info a:visited {
+	color: white;
+}
+
+main article span + img {
+	width: 100%;
+}
+
+main article section#rrss {
+	display: inline-flex;
+	float: right;
+}
+
+main article section#rrss a {
+	margin: 0.5rem;
+}
+
+main form#contacto {
+	grid-area: cn;
+	width: 30%;
+	background-color: white;
+	border-radius: 0 4rem;
+	padding: 2rem;
+}
+
+main form#contacto *:not(label) {
+	margin-bottom: 1rem;
+}
+
+main form#contacto input {
+	display: block;
+	width: 100%;
+}
+
+main form#contacto textarea {
+	width: 100%;
+}
+
+main form#contacto * input {
+	display: inline;
+	width: auto;
+}
+
+form#contacto textarea#mensaje {
+	height: 15rem;
+}
+
+@media screen and (max-width: 768px) {
+	header,
+	nav,
+	main {
+		padding: 0.5rem 0.5rem;
+	}
+
+	header {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"lg"
+			"id";
+		height: 13rem;
+	}
+
+	header div#idiomas {
+		display: inline-block;
+	}
+
+	header div#idiomas span:first-child,
+	header div#idiomas span:last-child {
+		display: inline-block;
+	}
+
+	nav {
+		grid-template-columns: 1fr;
+		grid-template-areas: "bs";
+	}
+
+	nav form#buscador > input {
+		padding: 0.1rem 8rem;
+	}
+
+	main {
+		grid-template-columns: 1fr;
+		grid-template-areas: "fc";
+	}
+
+	main article {
+		width: 100%;
+	}
+
+	main article span + img {
+		min-height: 260px;
+		min-width: 410px;
+	}
+
+	nav ul {
+		display: none;
+	}
+
+	main form#contacto {
+		display: none;
+	}
+}
